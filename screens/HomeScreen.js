@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
+import Dashboard from '../components/Dashboard';
+
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
@@ -24,6 +26,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.welcomeContainer}>
             <Text>[ You're running : DEV ]</Text>
           </View>
+          <Dashboard/>
           {/*
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
