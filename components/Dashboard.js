@@ -42,7 +42,7 @@ export default class Dashboard extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Your rough coordinates are: </Text>
-        <Text style={styles.paragraph}>Latitude: {text.latitude} ---- Longitude: {text.longitude}</Text>
+        <Text>Latitude: {text.latitude} ---- Longitude: {text.longitude}</Text>
       </View>
     );
   }
