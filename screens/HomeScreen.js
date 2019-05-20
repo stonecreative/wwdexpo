@@ -11,6 +11,7 @@ import {
 import { WebBrowser } from 'expo';
 
 import Dashboard from '../components/Dashboard';
+import logo from '../assets/images/logo.png';
 
 import { MonoText } from '../components/StyledText';
 
@@ -23,9 +24,12 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Text>[ You're running : DEV ]</Text>
-          </View>
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeText}>[ You're running : DEV ]</Text>
+        </View>
+        <View style={styles.logoStyle}>
+          <Image source={require('../assets/images/logo.png')} style={{ marginTop:24, marginBottom:8, flex:1}}/>
+        </View>
           <Dashboard/>
           {/*
           <View style={styles.getStartedContainer}>
@@ -90,11 +94,10 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#111',
   },
   developmentModeText: {
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
@@ -102,10 +105,17 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
+  logoStyle: { 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
   welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 8,
+    marginBottom: 8,
+  },
+  welcomeText: {
+    color:'rgba(255,255,255,0.9)',
   },
   welcomeImage: {
     width: 100,

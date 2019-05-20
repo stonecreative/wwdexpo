@@ -32,17 +32,21 @@ export default class Dashboard extends React.Component {
 
   render() {
     let text = 'Waiting..';
+    let latitude = 0;
+    let longitude = 0;
     if (this.state.errorMessage) {
       text = this.state.errorMessage;
     } else if (this.state.location) {
       text = this.state.location.coords;
+      latitude = parseFloat(this.state.location.coords.latitude).toFixed(4);
+      longitude = parseFloat(this.state.location.coords.longitude).toFixed(4);
     }
     console.log(JSON.stringify(text));
   
     return (
       <View style={styles.container}>
         <Text>Your rough coordinates are: </Text>
-        <Text>Latitude: {text.latitude} ---- Longitude: {text.longitude}</Text>
+        <Text>Latitude: {latitude} ---- Longitude: {longitude}</Text>
       </View>
     );
   }
